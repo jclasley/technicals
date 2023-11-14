@@ -25,13 +25,10 @@ class BinaryTree {
         if (val === this.value) {
             return this;
         }
-        if (this.right && val > this.value) {
-            return this.right.searchDepth(val);
+        if (val > this.value) {
+            return this.right ? this.right.searchDepth(val) : null;
         }
-        if (this.left) {
-            return this.left.searchDepth(val);
-        }
-        return null;
+        return this.left ? this.left.searchDepth(val) : null;
     }
 }
 
